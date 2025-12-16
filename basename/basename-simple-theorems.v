@@ -12,6 +12,10 @@ Proof.
 	reflexivity.
 Qed.
 
+Definition strlen (m:memory) (p:addr) (k:N) :=
+  forall i, i < k -> 0 < m Ⓑ[p+i] /\ 0 = m Ⓑ[p+k].
+
+
 (* Define binary length-bounded string equality. *)
 (*Definition memeq (m1 m2:memory) (p1 p2: addr) (k: N) :=
   forall i, i < k -> tolower (m Ⓑ[p1+i]) = tolower (m Ⓑ[p2+i]) /\ 0 < m Ⓑ[p1+i].*)
